@@ -1,0 +1,117 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.fields-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.label-input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.field-group {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.fields-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 500px;
+  justify-content: space-evenly;
+}
+
+.wrapper h1,
+.wrapper h2,
+.wrapper h3 {
+  margin: 13px 0;
+}
+
+h1,
+h2,
+h3,
+.icon-email,
+.submit-btn,
+.google-signup {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 25px;
+  padding: 4px;
+  border: none;
+}
+
+.icon-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  position: relative;
+}
+
+.email-text {
+  border: none;
+  background-color: transparent;
+  color: black;
+  box-shadow: none;
+}
+
+.separator {
+  width: 1px;
+  height: 20px;
+  background-color: white; /* Couleur de la barre verticale */
+  margin-right: 10px; /* Espacement entre la barre et le texte */
+  margin-left: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 1px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-link a {
+  color: #ff7e5f;
+  text-decoration: none;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+input[type="text"],
+input[type="mail"],
+input[type="password"],
+input[type="date"] {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+}
+
+input::placeholder {
+  color: #fff;
+}
