@@ -2,55 +2,146 @@ import React from "react";
 import "./LoginForm.css";
 import { FaUser } from "react-icons/fa";
 import { BsEnvelope } from "react-icons/bs";
-import { TextField } from "@mui/material";
+import { Box, Divider, TextField, Typography } from "@mui/material";
 import { useState } from "react";
+import googleLogo from "../Assets/google-icon.png";
 
 const LoginForm = () => {
-  const [isSignupClicked, setIsSignupClicked] = useState(false);
-
+  const [step, setStep] = useState("signUp");
+  const boxStyle = { display: "flex" };
   const handleSignupClick = () => {
-    setIsSignupClicked(true);
+    setStep("createAccount");
   };
-  const renderLoginForm = () => (
+  const handleLoginClick = () => {
+    setStep("login");
+  };
+  const renderSignupForm = () => (
     <>
-      <h2>MedicalHub</h2>
-      <h1>Welcome to MedicalHub</h1>
-      <h3>Shaping the future of medical networking</h3>
-      <div className="icon-email">
-        <BsEnvelope />
+      <Box
+        sx={{
+          display: "flex",
+          gap: "8px",
+          width: "100%",
+          marginLeft: "30px",
+          alignItems: "center",
+        }}
+      >
+        <BsEnvelope color="#ffffffb8" />
+        <Typography
+          sx={{
+            color: "#ffffffb8",
+          }}
+        >
+          |
+        </Typography>
         <input
           className="email-text"
           placeholder="Enter email"
           type="email"
           required
         />
-      </div>
-      <input
-        type="button"
-        value="Sign up"
-        className="submit-btn"
-        onClick={handleSignupClick}
-      />
-      <div className="separator-text">or</div>
-      <button className="google-signup">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
-          alt="Google logo"
-          width="20"
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px",
+        }}
+      >
+        <input
+          type="button"
+          value="Sign up"
+          className="submit-btn"
+          onClick={handleSignupClick}
         />
-        Signup with Google
-      </button>
-      <a className="login-link" href="/login">
+        <Divider
+          component="div"
+          sx={{
+            width: "100%",
+            "&::before,&::after": { borderColor: "#ffffffb8" },
+          }}
+        >
+          or
+        </Divider>
+        <button className="google-signup">
+          <img src={googleLogo} alt="Google logo" width="20" />
+          Signup with Google
+        </button>
+      </Box>
+      <Typography onClick={handleLoginClick}>
         Already have an account? login
-      </a>
+      </Typography>
     </>
   );
 
-  const renderSignupForm = () => (
+  const renderLoginForm = () => (
     <>
-      <h2>MedicalHub</h2>
-      <h1>Welcome to MedicalHub</h1>
-      <h3>Shaping the future of medical networking</h3>
+      <Box
+        sx={{
+          display: "flex",
+          gap: "8px",
+          width: "100%",
+          marginLeft: "30px",
+          alignItems: "center",
+        }}
+      >
+        <BsEnvelope color="#ffffffb8" />
+        <Typography
+          sx={{
+            color: "#ffffffb8",
+          }}
+        >
+          |
+        </Typography>
+        <input
+          className="email-text"
+          placeholder="Enter email"
+          type="email"
+          required
+        />
+        <input
+          className="email-text"
+          placeholder="Enter password"
+          type="email"
+          required
+        />
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px",
+        }}
+      >
+        <input
+          type="button"
+          value="Sign up"
+          className="submit-btn"
+          onClick={handleSignupClick}
+        />
+        <Divider
+          component="div"
+          sx={{
+            width: "100%",
+            "&::before,&::after": { borderColor: "#ffffffb8" },
+          }}
+        >
+          or
+        </Divider>
+        <button className="google-signup">
+          <img src={googleLogo} alt="Google logo" width="20" />
+          Signup with Google
+        </button>
+      </Box>
+      <Typography onClick={handleLoginClick}>
+        Already have an account? login
+      </Typography>
+    </>
+  );
+  const renderCreateAccountForm = () => (
+    <>
       <div className="fields-container">
         <div className="field-group">
           <label>First Name</label>
@@ -94,7 +185,34 @@ const LoginForm = () => {
 
   return (
     <div className="form-container">
-      {isSignupClicked ? renderSignupForm() : renderLoginForm()}
+      <Typography
+        sx={{ fontFamily: "Inter", fontWeight: 700, fontSize: "15px" }}
+      >
+        MedicalHub
+      </Typography>
+      <Typography
+        sx={{
+          fontFamily: "Inter",
+          fontWeight: 300,
+          fontSize: "50px",
+          lineHeight: "1.2",
+        }}
+      >
+        <p>Welcome to</p> MedicalHub
+      </Typography>
+      <Typography
+        sx={{
+          fontFamily: "Inter",
+          fontWeight: 400,
+          fontSize: "15px",
+          color: "#ffffffb8",
+        }}
+      >
+        Shapping the future medical network
+      </Typography>
+      {step == "signUp" && renderSignupForm()}
+      {step == "createAccount" && renderCreateAccountForm()}
+      {step == "login" && renderLoginForm()}
     </div>
   );
 };
