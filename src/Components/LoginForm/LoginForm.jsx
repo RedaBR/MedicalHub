@@ -142,43 +142,63 @@ const LoginForm = () => {
   );
   const renderCreateAccountForm = () => (
     <>
-      <div className="fields-container">
-        <div className="field-group">
-          <label>First Name</label>
-          <input type="text" placeholder="Enter first name" />
-        </div>
-        <div className="field-group">
-          <label>Last Name</label>
-          <input type="text" placeholder="Enter last name" />
-        </div>
-        <div className="field-group">
-          <label>Phone</label>
-          <input type="text" placeholder="123456789" />
-        </div>
-        <div className="field-group">
-          <label>Gender</label>
-          <div className="gender-options">
-            <button type="button">Male</button>
-            <button type="button">Female</button>
+      <Box
+        className="BoxStyle"
+        src={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+      >
+        <Box className="BoxStyleFpb">
+          <div className="field-group">
+            <label>First Name</label>
+            |
+            <input type="text" placeholder="Enter first name" />
           </div>
-        </div>
-        <div className="field-group">
-          <label>Birthday</label>
-          <input type="date" />
-        </div>
-        <div className="field-group">
-          <label>Nationality</label>
-          <input type="text" placeholder="Enter nationality" />
-        </div>
+          <div className="field-group">
+            <label>Phone</label>
+            |
+            <input type="text" placeholder="123456789" />
+          </div>
+          <div className="field-group">
+            <label>Birthday</label>
+            |
+            <input type="date" />
+          </div>
+        </Box>
+        <Box className="BoxStyleLgn">
+          <div className="field-group">
+            <label>Last Name</label>
+            |
+            <input type="text" placeholder="Enter last name" />
+          </div>
+
+          <div className="field-group">
+            <label>Gender</label>|
+            <div className="gender-options">
+              <Box className="boxButtonGender">
+                <button type="button">Male</button>
+                <button type="button">Female</button>
+              </Box>
+            </div>
+          </div>
+
+          <div className="field-group">
+            <label>Nationality</label>
+            |
+            <input type="text" placeholder="Enter nationality" />
+          </div>
+        </Box>
+      </Box>
+      <Box className="password">
         <div className="field-group">
           <label>Password</label>
+          |
           <input type="password" placeholder="Password" />
         </div>
         <div className="field-group">
           <label>Confirm password</label>
+          |
           <input type="password" placeholder="Confirm password" />
         </div>
-      </div>
+      </Box>
       <input type="submit" value="Sign up" className="submit-btn" />
     </>
   );
