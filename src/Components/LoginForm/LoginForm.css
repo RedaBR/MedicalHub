@@ -42,7 +42,6 @@ body {
 .submit-btn,
 .google-signup {
   width: 100%;
-  max-width: 300px;
   border-radius: 25px;
   padding: 4px;
   border: none;
@@ -96,6 +95,7 @@ body {
   color: black;
   box-shadow: none;
   display: flex;
+  font-size: 15px;
 }
 
 .separator {

@@ -2,7 +2,7 @@ import React from "react";
 import "./LoginForm.css";
 import { FaUser } from "react-icons/fa";
 import { BsEnvelope } from "react-icons/bs";
-import { Box, Divider, TextField, Typography } from "@mui/material";
+import { Box, Divider, Input, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import googleLogo from "../Assets/google-icon.png";
 
@@ -34,12 +34,7 @@ const LoginForm = () => {
         >
           |
         </Typography>
-        <input
-          className="email-text"
-          placeholder="Enter email"
-          type="email"
-          required
-        />
+        <Input placeholder="Enter email" required disableUnderline={true} />
       </Box>
       <Box
         sx={{
@@ -206,7 +201,11 @@ const LoginForm = () => {
   return (
     <div className="form-container">
       <Typography
-        sx={{ fontFamily: "Inter", fontWeight: 700, fontSize: "15px" }}
+        sx={{
+          fontFamily: "Inter",
+          fontWeight: 700,
+          fontSize: { xs: "15px", md: "20px", lg: "25px" },
+        }}
       >
         MedicalHub
       </Typography>
@@ -214,7 +213,7 @@ const LoginForm = () => {
         sx={{
           fontFamily: "Inter",
           fontWeight: 300,
-          fontSize: "50px",
+          fontSize: { xs: "50px", md: "60px", lg: "70px" },
           lineHeight: "1.2",
         }}
       >
@@ -224,7 +223,7 @@ const LoginForm = () => {
         sx={{
           fontFamily: "Inter",
           fontWeight: 400,
-          fontSize: "15px",
+          fontSize: { xs: "15px", md: "20px", lg: "25px" },
           color: "#ffffffb8",
         }}
       >
